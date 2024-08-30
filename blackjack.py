@@ -139,4 +139,6 @@ def play_blackjack():
             break
 
 # Run the game
-play_blackjack()
+# This was amended for the test_blackjack file
+if __name__ == "__main__":
+    play_blackjack()
