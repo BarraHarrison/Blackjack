@@ -10,7 +10,7 @@ class Card:
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
-        self.value = VALUES[rank]  # Fixed to refer to the correct VALUES dictionary
+        self.value = VALUES[rank]  
 
     def __str__(self):
         return f'{self.rank} of {self.suit}'
@@ -33,7 +33,7 @@ class Deck:
         """Deal one card from the deck."""
         return self.cards.pop()
 
-# Hand class
+
 class Hand:
     def __init__(self):
         self.cards = []
@@ -69,7 +69,7 @@ def display_player_hand(player_hand):
 def display_dealer_hand_hidden(dealer_hand):
     """Display dealer's hand with one card hidden."""
     print("\nDealer's Hand:")
-    if len(dealer_hand.cards) > 1:  # Added check to avoid IndexError
+    if len(dealer_hand.cards) > 1:  
         print(" <hidden card>")
         print('', dealer_hand.cards[1])
     else:
@@ -134,7 +134,7 @@ def push(player_hand, dealer_hand):
 def check_winner(player_hand, dealer_hand):
     """Determine and display the winner."""
     if check_bust(dealer_hand):
-        return dealer_busts(player_hand, dealer_hand)  # Return to stop further checks if dealer busts
+        return dealer_busts(player_hand, dealer_hand)  
     if dealer_hand.value > player_hand.value:
         return dealer_wins(player_hand, dealer_hand)
     if dealer_hand.value < player_hand.value:
@@ -142,7 +142,7 @@ def check_winner(player_hand, dealer_hand):
     
     return push(player_hand, dealer_hand)
 
-# Main Game Method
+
 def play_blackjack():
     print("Welcome to Blackjack")
 
@@ -165,6 +165,6 @@ def play_blackjack():
             print("Thanks for playing!")
             break
 
-# Run the game
+
 if __name__ == "__main__":
     play_blackjack()
